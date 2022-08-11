@@ -4,3 +4,26 @@ Jenkins container image with docker command line tools
 docker build -t macthegif/jenkins-docker:1.0 .
 docker push macthegif/jenkins-docker:1.0
 
+Deployment prerequisite:
+
+We need to allow the docker group (GID 994) access to the hosts docker socket.
+
+  $ sudo setfacl -m g:994 /var/run/docker.sock
+
+make permanent:
+
+  $ sudo cat /etc/systemd/system/docker.service.d/setsocketpermissons.conf
+  [Service]
+  ExecStartPost=/usr/bin/setfacl -m g:994:rw /var/run/docker.sock
+
+then:
+
+  $ docker run -d -p 53051:8080 -p 53052:50000 \
+      -v "jenkins_home:/var/jenkins_home" \
+      -v "/var/run/docker.sock:/var/run/docker.sock" \
+      --name jenkins "macthegif/jenkins-docker:1.0"
+
+or:
+
+  $ docker stack deploy -c jenkins.stack.yml jenkins
+
