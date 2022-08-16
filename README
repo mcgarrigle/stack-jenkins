@@ -1,8 +1,8 @@
 
 Jenkins container image with docker command line tools
 
-docker build -t macthegif/jenkins-docker:1.0 .
-docker push macthegif/jenkins-docker:1.0
+docker build -t macthegif/jenkins-docker:1.1 .
+docker push macthegif/jenkins-docker:1.1
 
 Deployment prerequisite:
 

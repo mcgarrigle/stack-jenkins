@@ -3,6 +3,6 @@ FROM jenkins/jenkins:lts-jdk11
 USER root
 RUN groupadd --gid 994 docker
 RUN usermod -G docker jenkins
-RUN apt-get update && apt-get install -y docker.io
+RUN apt-get update && apt-get install -y docker.io jq
 # drop back to the regular jenkins user - good practice
 USER jenkins
