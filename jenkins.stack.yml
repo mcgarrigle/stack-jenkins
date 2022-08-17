@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   server:
-    image: 'macthegif/jenkins-docker:1.0'
+    image: 'macthegif/jenkins-docker:1.1'
     ports:
       - "8080"
       - "50000"

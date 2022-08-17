@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl --user "$JENKINS_TOKEN" -s "$JENKINS_URL/job/$1/config.xml" > "$1.config.xml"

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+curl -X POST "$JENKINS_URL/createItem?name=$2" \
+  --user "$JENKINS_TOKEN" \
+  --header "Content-Type: application/xml" \
+  -d @$1
