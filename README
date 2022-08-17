@@ -27,3 +27,18 @@ or:
 
   $ docker stack deploy -c jenkins.stack.yml jenkins
 
+Jenkins Job Management
+
+Set variables:
+
+  $ export JENKINS_URL="http://docker-host:8080"
+  $ export JENKINS_TOKEN="admin:6712a7acccac2670aa1f146e"
+
+Save job:
+
+  $ job-save my-project                             # stores my-project.config.xml
+
+Load job:
+
+  $ job-load my-project.config.xml my-new-project   # load project with new name
+
