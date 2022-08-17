@@ -1,10 +1,12 @@
 
 Jenkins container image with docker command line tools
+------------------------------------------------------
 
-docker build -t macthegif/jenkins-docker:1.1 .
-docker push macthegif/jenkins-docker:1.1
+docker build -t macthegif/jenkins-docker:1.2 .
+docker push macthegif/jenkins-docker:1.2
 
-Deployment prerequisite:
+Deployment prerequisite
+-----------------------
 
 We need to allow the docker group (GID 994) access to the hosts docker socket.
 
@@ -28,6 +30,7 @@ or:
   $ docker stack deploy -c jenkins.stack.yml jenkins
 
 Jenkins Job Management
+----------------------
 
 Set variables:
 
